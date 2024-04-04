@@ -1,0 +1,5 @@
+param	value
+cmd_line	cuffdiff --labels WT_VLCO2,WT_LoCO2,WT_HiCO2,cia5_VLCO2,cia5_LoCO2,cia5_HiCO2 --output-dir /u/scratch/m/michaell/merchant/clustering/02_Cufflinks/12-CO2_Concentration --num-threads 8 --multi-read-correct --max-bundle-frags 1000000000 /u/home/m/michaell/project-cnsi/Genomes/Creinhardtii//annotation/Creinhardtii_281_.gene_exons.gff3 WT_VLCO2_b1.bam,WT_VLCO2_b2.bam WT_LoCO2_b1.bam,WT_LoCO2_b2.bam WT_HiCO2_b1.bam,WT_HiCO2_b2.bam cia5_VLCO2_b1.bam,cia5_VLCO2_b2.bam cia5_LoCO2_b1.bam,cia5_LoCO2_b2.bam cia5_HiCO2_b1.bam,cia5_HiCO2_b2.bam 
+version	2.2.1
+SVN_revision	4237
+boost_version	104700
