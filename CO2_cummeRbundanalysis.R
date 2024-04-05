@@ -16,9 +16,11 @@ library(cummeRbund)
 # the dplyr library:
 library(dplyr)
 
+# Next we are going to set the working directory with setwd()
+setwd("~/MCB_C117_Lecture_21/")
 
 # Next, we need to load the RNA-Seq data.
-cuff<-readCufflinks(dir = "~/MCB_C117_Lecture_21.git/RNAseq_data_CO2/")
+cuff<-readCufflinks(dir = "RNAseq_data_CO2/")
 
 
 # To check that the data has been processed 
@@ -49,7 +51,9 @@ write.table(cbind(geneIDs, fpkms), file = "CO2_FPKMs.tsv", sep = "\t", row.names
 # Check expression of the CIA5 gene.
 # The gene ID for CIA5 is Cre02.g096300.
 # Put the gene ID into a character variable
+
 cia5<-"Cre02.g096300"
+
 # Select the cia5 row in our fpkms data frame
 fpkms[cia5,]
 
@@ -61,9 +65,11 @@ csDendro(genes(cuff))
 csDendro(genes(cuff),replicates=TRUE)
 
 
-# Make a PCA plot of all samples (called MDS in cummeRbund)
-MDSplot(genes(cuff),replicates = TRUE)
+# Make a PCA plot of each condition (called MDS in cummeRbund)
+MDSplot(genes(cuff),replicates = FALSE)
 
+# Make a PCA plot of each replicate
+MDSplot(genes(cuff),replicates = TRUE)
 
 # examine differential expression data
 gene.diff<-diffData(genes(cuff))
@@ -73,7 +79,7 @@ head(gene.diff)
 
 # how many pairwise comparisons are there?
 dim(gene.diff)
-# 17,741 genes x 15 comparisons
+# 17,741 genes x 15 comparisons = 266,115!
 
 # get all genes that are 
 # significantly different in any sample
@@ -109,7 +115,7 @@ csHeatmap(WTsigGeneData,
 
 csHeatmap(WTsigGeneData,
              labRow = FALSE,
-             heatscale = c("white","darkblue"),
+             heatscale = c("gray90","darkblue"),
              logMode = TRUE)
 
 # Get significant genes just
