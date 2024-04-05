@@ -16,14 +16,8 @@ library(cummeRbund)
 # the dplyr library:
 library(dplyr)
 
-########## 
-# To remove for class
-setwd("~/Desktop/2024-MCB_C117/Lecture_21_RNA-Seq_applications/")
-##########
-
 
 # Next, we need to load the RNA-Seq data.
-cuff<-readCufflinks(dir = "~/Desktop/2024-MCB_C117/Lecture_21_RNA-Seq_applications/MCB_C117_Lecture_21/RNAseq_data_CO2/")
 cuff<-readCufflinks(dir = "~/MCB_C117_Lecture_21.git/RNAseq_data_CO2/")
 
 
